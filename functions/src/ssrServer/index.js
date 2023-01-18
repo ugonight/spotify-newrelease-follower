@@ -16885,8 +16885,8 @@ var init_layout_svelte = __esm({
     Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       $$result.css.add(css);
       return `
-<nav class="${"navbar navbar-light bg-light static-top"}"><div class="${"container"}"><a class="${"navbar-brand"}" href="${"#!"}">Spotify New Release Follower</a>
-		<a class="${"btn btn-primary"}" href="${"#signup"}">Sign Up</a></div></nav>
+<nav class="${"navbar navbar-light bg-light static-top"}"><div class="${"container"}"><a class="${"navbar-brand"}" href="${"/"}">Spotify New Release Follower</a>
+		<a class="${"btn btn-primary"}" href="${"#signup"}">Sign in with Spotify</a></div></nav>
 
 ${slots.default ? slots.default({}) : ``}
 
@@ -16894,6 +16894,8 @@ ${slots.default ? slots.default({}) : ``}
 <footer class="${"footer bg-light svelte-689dj1"}"><div class="${"container"}"><div class="${"row text-center"}"><div class="${"col-lg"}"><p class="${"text-muted mb-4 mb-lg-0"}">\u3053\u306EWeb\u30B5\u30FC\u30D3\u30B9\u306F <a href="${"https://www.spotify.com/jp/"}" target="${"_blank"}" rel="${"noopener noreferrer"}"><img${add_attribute("src", Spotify_Logo, 0)} width="${"100"}" alt="${"Spotify"}"></a> \u3092\u5229\u7528\u3057\u3066\u3044\u307E\u3059\u3002
 				</p></div>
 			<div class="${"col-lg"}"><ul class="${"list-inline mb-2"}">
+					<li class="${"list-inline-item"}"><a href="${"#!"}">\u9023\u7D61\u5148</a></li>
+					<li class="${"list-inline-item"}">\u22C5</li>
 					<li class="${"list-inline-item"}"><a href="${"#!"}">\u5229\u7528\u898F\u7D04</a></li>
 					<li class="${"list-inline-item"}">\u22C5</li>
 					<li class="${"list-inline-item"}"><a href="${"#!"}">\u30D7\u30E9\u30A4\u30D0\u30B7\u30FC\u30DD\u30EA\u30B7\u30FC</a></li></ul></div></div>
@@ -16920,8 +16922,8 @@ var init__ = __esm({
     init_shims();
     index = 0;
     component = async () => (await Promise.resolve().then(() => (init_layout_svelte(), layout_svelte_exports))).default;
-    file = "_app/immutable/components/pages/_layout.svelte-7cd45bef.js";
-    imports = ["_app/immutable/components/pages/_layout.svelte-7cd45bef.js", "_app/immutable/chunks/index-fec95ab1.js"];
+    file = "_app/immutable/components/pages/_layout.svelte-7f1aa19f.js";
+    imports = ["_app/immutable/components/pages/_layout.svelte-7f1aa19f.js", "_app/immutable/chunks/index-fec95ab1.js"];
     stylesheets = ["_app/immutable/assets/_layout-8eeaa256.css"];
     fonts = ["_app/immutable/assets/bootstrap-icons-966620f9.woff2", "_app/immutable/assets/bootstrap-icons-c6569d46.woff"];
   }
@@ -17520,7 +17522,7 @@ ${components[1] ? `${validate_component(components[0] || missing_component, "sve
 ${``}`;
 });
 set_paths({ "base": "", "assets": "" });
-set_version("1673949874486");
+set_version("1674058892265");
 var options = {
   csp: { "mode": "auto", "directives": { "upgrade-insecure-requests": false, "block-all-mixed-content": false }, "reportOnly": { "upgrade-insecure-requests": false, "block-all-mixed-content": false } },
   csrf_check_origin: true,
@@ -20157,7 +20159,7 @@ var manifest = {
   assets: /* @__PURE__ */ new Set(["favicon.png"]),
   mimeTypes: { ".png": "image/png" },
   _: {
-    entry: { "file": "_app/immutable/start-a13c9cb0.js", "imports": ["_app/immutable/start-a13c9cb0.js", "_app/immutable/chunks/index-fec95ab1.js", "_app/immutable/chunks/singletons-ab88f2a0.js"], "stylesheets": [], "fonts": [] },
+    entry: { "file": "_app/immutable/start-e5f54217.js", "imports": ["_app/immutable/start-e5f54217.js", "_app/immutable/chunks/index-fec95ab1.js", "_app/immutable/chunks/singletons-ab88f2a0.js"], "stylesheets": [], "fonts": [] },
     nodes: [
       () => Promise.resolve().then(() => (init__(), __exports)),
       () => Promise.resolve().then(() => (init__2(), __exports2)),
