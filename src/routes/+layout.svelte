@@ -7,8 +7,8 @@
 <!-- Navigation-->
 <nav class="navbar navbar-light bg-light static-top">
 	<div class="container">
-		<a class="navbar-brand" href="#!">Spotify New Release Follower</a>
-		<a class="btn btn-primary" href="#signup">Sign Up</a>
+		<a class="navbar-brand" href="/">Spotify New Release Follower</a>
+		<a class="btn btn-primary" href="#signup">Sign in with Spotify</a>
 	</div>
 </nav>
 
@@ -30,9 +30,9 @@
 			<div class="col-lg">
 				<ul class="list-inline mb-2">
 					<!-- <li class="list-inline-item"><a href="#!">About</a></li>
-					<li class="list-inline-item">⋅</li>
-					<li class="list-inline-item"><a href="#!">Contact</a></li>
 					<li class="list-inline-item">⋅</li> -->
+					<li class="list-inline-item"><a href="#!">連絡先</a></li>
+					<li class="list-inline-item">⋅</li>
 					<li class="list-inline-item"><a href="#!">利用規約</a></li>
 					<li class="list-inline-item">⋅</li>
 					<li class="list-inline-item"><a href="#!">プライバシーポリシー</a></li>
