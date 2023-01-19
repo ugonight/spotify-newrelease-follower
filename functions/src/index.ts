@@ -9,7 +9,7 @@ import * as functions from "firebase-functions";
 // });
 
 let ssrServerServer: any;
-exports.ssrServer = functions.region("asia-northeast1").https.onRequest(async (request, response) => {
+exports.ssrServer = functions.region("us-central1").https.onRequest(async (request, response) => {
     if (!ssrServerServer) {
         functions.logger.info("Initialising SvelteKit SSR entry");
         ssrServerServer = require("./ssrServer/index").default;
