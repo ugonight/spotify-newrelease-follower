@@ -31,7 +31,7 @@
 				<ul class="list-inline mb-2">
 					<!-- <li class="list-inline-item"><a href="#!">About</a></li>
 					<li class="list-inline-item">⋅</li> -->
-					<li class="list-inline-item"><a href="#!">連絡先</a></li>
+					<li class="list-inline-item"><a href="/contact">連絡先</a></li>
 					<li class="list-inline-item">⋅</li>
 					<li class="list-inline-item"><a href="#!">利用規約</a></li>
 					<li class="list-inline-item">⋅</li>
