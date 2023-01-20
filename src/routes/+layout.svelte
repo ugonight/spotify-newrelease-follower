@@ -6,7 +6,7 @@
 
 <!-- Navigation-->
 <nav class="navbar navbar-light bg-light static-top">
-	<div class="container">
+	<div class="container justify-content-center justify-content-lg-between">
 		<a class="navbar-brand" href="/">Spotify New Release Follower</a>
 		<a class="btn btn-primary" href="#signup">Sign in with Spotify</a>
 	</div>

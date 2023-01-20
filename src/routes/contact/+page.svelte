@@ -1,3 +1,9 @@
+<script lang="ts">
+	import type { PageData, ActionData } from './$types';
+
+	export let form: ActionData;
+</script>
+
 <div class="container">
 	<div class="row my-4 text-center">
 		<div class="col">
@@ -7,6 +13,17 @@
 	<div class="row my-3 text-center">
 		<div class="col">ご意見・ご要望・その他何かありましたら、こちらまでご連絡をお願いします。</div>
 	</div>
+	{#if form?.status == 'success'}
+		<div class="alert alert-success d-flex align-items-center" role="alert">
+			<i class="bi bi-check-circle-fill" />
+			<div> 送信に成功しました。</div>
+		</div>
+	{:else if form?.status == 'error'}
+		<div class="alert alert-danger d-flex align-items-center" role="alert">
+			<i class="bi bi-exclamation-triangle-fill" />
+			<div> 送信に失敗しました。しばらく経ってから再度お試しください。</div>
+		</div>
+	{/if}
 	<div class="row mb-5">
 		<div class="col mx-6">
 			<div class="card">
