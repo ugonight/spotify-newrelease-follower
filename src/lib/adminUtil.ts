@@ -1,4 +1,3 @@
-import type { FirebaseError } from "firebase-admin";
 import * as admin from "firebase-admin";
 
 export function getAdminApp() {

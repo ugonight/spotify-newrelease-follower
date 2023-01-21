@@ -4,14 +4,14 @@
 	export let form: ActionData;
 </script>
 
-<div class="container">
+<div class="container py-4 px-3 mx-auto">
 	<div class="row my-4 text-center">
 		<div class="col">
 			<h1>お問い合わせ</h1>
 		</div>
 	</div>
 	<div class="row my-3 text-center">
-		<div class="col">ご意見・ご要望・その他何かありましたら、こちらまでご連絡をお願いします。</div>
+		<div class="col">ご意見・ご要望・その他何かありましたら、こちらでご連絡をお願いします。</div>
 	</div>
 	{#if form?.status == 'success'}
 		<div class="alert alert-success d-flex align-items-center" role="alert">

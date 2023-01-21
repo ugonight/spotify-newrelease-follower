@@ -4,6 +4,11 @@
 	import Spotify_Logo from '$lib/images/Spotify_Logo_RGB_Green.png';
 </script>
 
+<svelte:head>
+	<title>Spotify New Release Follower</title>
+	<meta name="description" content="Spotify新曲プレイリスト自動管理ツール" />
+</svelte:head>
+
 <!-- Navigation-->
 <nav class="navbar navbar-light bg-light static-top">
 	<div class="container justify-content-center justify-content-lg-between">
@@ -31,7 +36,7 @@
 				<ul class="list-inline mb-2">
 					<!-- <li class="list-inline-item"><a href="#!">About</a></li>
 					<li class="list-inline-item">⋅</li> -->
-					<li class="list-inline-item"><a href="/contact">連絡先</a></li>
+					<li class="list-inline-item"><a href="/contact">お問い合わせ</a></li>
 					<li class="list-inline-item">⋅</li>
 					<li class="list-inline-item"><a href="#!">利用規約</a></li>
 					<li class="list-inline-item">⋅</li>
