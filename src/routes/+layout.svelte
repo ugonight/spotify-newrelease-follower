@@ -13,7 +13,7 @@
 <nav class="navbar navbar-light bg-light static-top">
 	<div class="container justify-content-center justify-content-lg-between">
 		<a class="navbar-brand" href="/">Spotify New Release Follower</a>
-		<a class="btn btn-primary" href="#signup">Sign in with Spotify</a>
+		<!-- <a class="btn btn-primary" href="#signup">Sign in with Spotify</a> -->
 	</div>
 </nav>
 
@@ -38,24 +38,37 @@
 					<li class="list-inline-item">⋅</li> -->
 					<li class="list-inline-item"><a href="/contact">お問い合わせ</a></li>
 					<li class="list-inline-item">⋅</li>
-					<li class="list-inline-item"><a href="#!">利用規約</a></li>
+					<li class="list-inline-item"><a href="/terms-of-use">利用規約</a></li>
 					<li class="list-inline-item">⋅</li>
-					<li class="list-inline-item"><a href="#!">プライバシーポリシー</a></li>
+					<li class="list-inline-item"><a href="/privacy-policy">プライバシーポリシー</a></li>
+					<li class="list-inline-item">⋅</li>
+					<li class="list-inline-item"><a href="/cookie-policy">Cookie ポリシー</a></li>
 				</ul>
 			</div>
 		</div>
-		<div class="row mt-3">
-			<div class="col">
-				<p class="text-muted small text-center mb-4 mb-lg-0">&copy; 2022 ugonight</p>
+		<div class="row">
+			<div class="col-lg-6">
+				<p class="text-muted small text-center text-lg-start my-4 mb-4 mb-lg-0">
+					&copy; 2022 ugonight
+				</p>
 			</div>
-		</div>
-		<!-- <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+			<div class="col-lg-6 h-100 text-center text-lg-end my-auto">
 				<ul class="list-inline mb-0">
 					<li class="list-inline-item me-4">
-						<a href="https://twitter.com/ugonight_nanase"><i class="bi-twitter fs-3" /></a>
+						<a href="https://twitter.com/ugonight_nanase" target="_blank" rel="noopener noreferrer"
+							><i class="bi-twitter fs-3" /></a
+						>
+					</li>
+					<li class="list-inline-item me-4">
+						<a
+							href="https://github.com/ugonight/spotify-newrelease-follower"
+							target="_blank"
+							rel="noopener noreferrer"><i class="bi bi-github fs-3" /></a
+						>
 					</li>
 				</ul>
-			</div> -->
+			</div>
+		</div>
 	</div>
 </footer>
 

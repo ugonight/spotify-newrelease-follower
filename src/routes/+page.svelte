@@ -10,8 +10,9 @@
 						>Spotify でログインしてはじめる</button
 					>
 					<p class="mt-3">
-						ログインすると<a href="#!">利用規約</a>と<a href="#!">プライバシーポリシー</a
-						>に同意したものとみなされます。
+						ログインすると<a href="/terms-of-use">利用規約</a>・<a href="/privacy-policy"
+							>プライバシーポリシー</a
+						>・<a href="/cookie-policy">Cookie ポリシー</a>に同意したものとみなされます。
 					</p>
 				</div>
 			</div>
@@ -19,41 +20,42 @@
 	</div>
 </header>
 
-<section class="container showcase">
-	<div class="row">
-		<div
-			class="col-lg-6 order-lg-2 text-white showcase-img"
-			style="background-image: url('assets/img/bg-showcase-1.jpg')"
-		/>
-		<div class="col-lg-6 order-lg-1 my-auto showcase-text">
-			<h2><i class="bi bi-journal-plus" /> 新曲を自動追加！</h2>
-			<p class="lead mb-0">
-				アーティストのニューリリースを監視して、すばやくプレイリストに追加します。
-			</p>
-		</div>
-	</div>
-	<div class="row">
-		<div
-			class="col-lg-6 order-lg-2 text-white showcase-img"
-			style="background-image: url('assets/img/bg-showcase-1.jpg')"
-		/>
-		<div class="col-lg-6 order-lg-1 my-auto showcase-text">
-			<h2><i class="bi bi-journal-minus" /> 古い曲を自動削除！</h2>
-			<p class="lead mb-0">
-				プレイリスト内でリリースから指定した期間が経過した曲を、自動で削除します。
-			</p>
-		</div>
-	</div>
-	<div class="row">
-		<div
-			class="col-lg-6 order-lg-2 text-white showcase-img"
-			style="background-image: url('assets/img/bg-showcase-1.jpg')"
-		/>
-		<div class="col-lg-6 order-lg-1 my-auto showcase-text">
-			<h2><i class="bi bi-headphones"></i> Let's enjoy music!</h2>
-			<p class="lead mb-0">
-				あなただけのオリジナルのプレイリストを作成して、音楽を楽しみましょう！
-			</p>
+<section class="features-icons bg-light text-center">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4">
+				<div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+					<div class="features-icons-icon d-flex">
+						<i class="bi bi-journal-plus m-auto text-primary" />
+					</div>
+					<h3>新曲を自動追加！</h3>
+					<p class="lead mb-0">
+						アーティストのニューリリースを監視して、すばやくプレイリストに追加します。
+					</p>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+					<div class="features-icons-icon d-flex">
+						<i class="bi bi-journal-minus m-auto text-primary" />
+					</div>
+					<h3>古い曲を自動削除！</h3>
+					<p class="lead mb-0">
+						プレイリスト内でリリースから指定した期間が経過した曲を、自動で削除します。
+					</p>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="features-icons-item mx-auto mb-0 mb-lg-3">
+					<div class="features-icons-icon d-flex">
+						<i class="bi bi-headphones m-auto text-primary" />
+					</div>
+					<h3>Let's enjoy music!</h3>
+					<p class="lead mb-0">
+						あなただけのオリジナルのプレイリストを作成して、音楽を楽しみましょう！
+					</p>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
@@ -91,16 +93,17 @@
 		}
 	}
 
-	.showcase .showcase-text {
-		padding: 3rem;
+	.features-icons {
+		padding-top: 7rem;
+		padding-bottom: 7rem;
 	}
-	.showcase .showcase-img {
-		min-height: 30rem;
-		background-size: cover;
+	.features-icons .features-icons-item {
+		max-width: 20rem;
 	}
-	@media (min-width: 768px) {
-		.showcase .showcase-text {
-			padding: 7rem;
-		}
+	.features-icons .features-icons-item .features-icons-icon {
+		height: 7rem;
+	}
+	.features-icons .features-icons-item .features-icons-icon i {
+		font-size: 4.5rem;
 	}
 </style>
