@@ -6,9 +6,7 @@
 				<div class="text-center text-white">
 					<!-- Page heading-->
 					<h1 class="mb-5">Spotify新曲プレイリスト<br class="d-sm-none" />自動管理ツール</h1>
-					<button type="button" class="btn btn-success btn-lg"
-						>Spotify でログインしてはじめる</button
-					>
+					<a class="btn btn-success btn-lg" href="/login">Spotify でログインしてはじめる</a>
 					<p class="mt-3">
 						ログインすると<a href="/terms-of-use">利用規約</a>・<a href="/privacy-policy"
 							>プライバシーポリシー</a
@@ -50,7 +48,7 @@
 					<div class="features-icons-icon d-flex">
 						<i class="bi bi-headphones m-auto text-primary" />
 					</div>
-					<h3>Let's enjoy music!</h3>
+					<h3>Let's enjoy your music!</h3>
 					<p class="lead mb-0">
 						あなただけのオリジナルのプレイリストを作成して、音楽を楽しみましょう！
 					</p>
