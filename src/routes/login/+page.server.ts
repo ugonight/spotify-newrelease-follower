@@ -17,16 +17,12 @@ const generateRandomString = function (length: number) {
     return text;
 };
 
-const stateKey = 'spotify_auth_state';
-
 export const load: PageServerLoad = async ({ url, cookies }) => {
     var state = generateRandomString(16);
-    cookies.set(stateKey, state);
+    cookies.set("__session", state);
 
     const scope = 'user-read-private user-read-email playlist-read-private playlist-read-collaborative playlist-modify-private playlist-modify-public';
     const redirect_uri = url.origin + '/callback';
-
-    // console.log(redirect_uri);
 
     const authURL = new URL('https://accounts.spotify.com/authorize');
     const params = new URLSearchParams({

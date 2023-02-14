@@ -2,19 +2,17 @@ import { error, redirect } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 import { env } from '$env/dynamic/private';
 
-const stateKey = 'spotify_auth_state';
-
 export const load = (async ({ cookies, url, fetch }) => {
     const code = url.searchParams.get("code") || null;
     const state = url.searchParams.get("state") || null;
-    const storedState = cookies ? cookies.get(stateKey) : null;
+    const storedState = cookies ? cookies.get("__session") : null;
     const redirect_uri = url.origin + '/callback';
 
     if (code === null || state === null || state !== storedState) {
-        throw redirect(307, "/");
+        throw error(500, "アカウント認証に失敗しました。");
     }
 
-    cookies.delete(stateKey);
+    cookies.delete("__session");
 
     const params = new URLSearchParams({
         "code": code,
@@ -36,8 +34,10 @@ export const load = (async ({ cookies, url, fetch }) => {
     }
 
     const authInfo = await res.json();
-    cookies.set("spotify_access_token", authInfo.access_token);
-    cookies.set("spotify_refresh_token", authInfo.refresh_token);
+    cookies.set("__session", JSON.stringify({
+        spotify_access_token: authInfo.access_token,
+        spotify_refresh_token: authInfo.refresh_token
+    }));
 
     throw redirect(307, "/control");
 
