@@ -1,5 +1,5 @@
 import { error, redirect } from '@sveltejs/kit';
-import type { Action, Actions, PageServerLoad } from './$types'
+import type { Action, Actions, PageServerLoad } from '../$types'
 import { env } from '$env/dynamic/private';
 
 /**
@@ -22,7 +22,7 @@ export const load: PageServerLoad = async ({ url, cookies }) => {
     cookies.set("__session", state);
 
     const scope = 'user-read-private user-read-email playlist-read-private playlist-read-collaborative playlist-modify-private playlist-modify-public';
-    const redirect_uri = url.origin + '/callback';
+    const redirect_uri = url.origin + '/login/callback';
 
     const authURL = new URL('https://accounts.spotify.com/authorize');
     const params = new URLSearchParams({

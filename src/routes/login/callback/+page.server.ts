@@ -6,7 +6,7 @@ export const load = (async ({ cookies, url, fetch }) => {
     const code = url.searchParams.get("code") || null;
     const state = url.searchParams.get("state") || null;
     const storedState = cookies ? cookies.get("__session") : null;
-    const redirect_uri = url.origin + '/callback';
+    const redirect_uri = url.origin + '/login/callback';
 
     if (code === null || state === null || state !== storedState) {
         throw error(500, "アカウント認証に失敗しました。");
@@ -37,7 +37,7 @@ export const load = (async ({ cookies, url, fetch }) => {
     cookies.set("__session", JSON.stringify({
         spotify_access_token: authInfo.access_token,
         spotify_refresh_token: authInfo.refresh_token
-    }));
+    }), { path: '/' });
 
     throw redirect(307, "/control");
 

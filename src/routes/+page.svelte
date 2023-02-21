@@ -6,7 +6,7 @@
 				<div class="text-center text-white">
 					<!-- Page heading-->
 					<h1 class="mb-5">Spotify新曲プレイリスト<br class="d-sm-none" />自動管理ツール</h1>
-					<a class="btn btn-success btn-lg" href="/login">Spotify でログインしてはじめる</a>
+					<a class="btn btn-success btn-lg" href="/login/authorize">Spotify でログインしてはじめる</a>
 					<p class="mt-3">
 						ログインすると<a href="/terms-of-use">利用規約</a>・<a href="/privacy-policy"
 							>プライバシーポリシー</a
