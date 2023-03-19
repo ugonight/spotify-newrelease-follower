@@ -1,4 +1,5 @@
 import { getAdminApp } from "./adminUtil";
+import { DB } from "./dbUtil";
 
 export async function sendMail(name?: string, email?: string, content?: string) {
     if (!name || !email || !content) {
@@ -14,13 +15,12 @@ export async function sendMail(name?: string, email?: string, content?: string) 
     内容:
     ${content}`;
 
-    const db = getAdminApp().firestore();
-
-    await db.collection('mail').add({
+    const db = await new DB().init();
+    db.add('mail', {
         to: process.env.OWNER_MAIL,
         message: {
             subject: '[Spotify New Release Follower] お問い合わせ',
             text: text,
         },
-    })
+    });
 }
