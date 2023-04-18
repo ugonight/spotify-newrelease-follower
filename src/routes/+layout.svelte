@@ -70,6 +70,10 @@
 			</div>
 		</div>
 	</div>
+	<div class="alert alert-danger d-flex align-items-center mt-3 mx-3" role="alert">
+		<i class="bi bi-exclamation-triangle fs-2 mx-4"></i>
+		<div>このWebサイトは現在開発中です！<br>This website is currently under development!</div>
+	</div>
 </footer>
 
 <style>

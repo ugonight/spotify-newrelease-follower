@@ -34,8 +34,6 @@ export const load: PageServerLoad = async ({ url, cookies }) => {
     });
     authURL.search = params.toString();
 
-    console.log(authURL.toString());
-
     // your application requests authorization
     throw redirect(307, authURL.toString());
 }
