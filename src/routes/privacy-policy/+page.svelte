@@ -1,4 +1,8 @@
-<div class="container py-4 px-3 mx-auto">
+<script>
+	import { Container } from 'sveltestrap';
+</script>
+
+<Container class="py-4 px-3 mx-auto">
 	<h1 id="プライバシーポリシー">プライバシーポリシー</h1>
 	<p>
 		ugonight（以下、「当社」といいます。）は、本ウェブサイト上で提供するサービス（以下,「本サービス」といいます。）における、ユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定めます。
@@ -139,4 +143,4 @@
 	<p>本ポリシーに関するお問い合わせは、本サイトの<a href="/contact">お問い合わせフォーム</a>までお願いいたします。</p>
 	<p>&nbsp;</p>
 	<p>以上</p>
-</div>
+</Container>

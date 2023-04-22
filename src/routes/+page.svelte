@@ -1,52 +1,63 @@
+<script>
+	import { Container, Row, Col, Icon, Button } from 'sveltestrap';
+</script>
+
 <!-- Masthead-->
 <header class="masthead">
-	<div class="container position-relative">
-		<div class="row justify-content-center">
-			<div class="col">
+	<Container class="position-relative">
+		<Row class="justify-content-center">
+			<Col>
 				<div class="text-center text-white">
 					<!-- Page heading-->
 					<h1 class="mb-5">Spotify新曲プレイリスト<br class="d-sm-none" />自動管理ツール</h1>
-					<a class="btn btn-success btn-lg" href="/login/authorize">Spotify でログインしてはじめる</a>
+					<Button color="success" size="lg" href="/login/authorize"
+						>Spotify でログインしてはじめる</Button
+					>
 					<p class="mt-3">
 						ログインすると<a href="/terms-of-use">利用規約</a>・<a href="/privacy-policy"
 							>プライバシーポリシー</a
 						>・<a href="/cookie-policy">Cookie ポリシー</a>に同意したものとみなされます。
 					</p>
 				</div>
-			</div>
-		</div>
-	</div>
+			</Col>
+		</Row>
+	</Container>
 </header>
 
 <section class="features-icons bg-light text-center">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-4">
+	<Container>
+		<Row>
+			<Col lg="4">
 				<div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
 					<div class="features-icons-icon d-flex">
-						<i class="bi bi-journal-plus m-auto text-primary" />
+						<Icon
+							as="i"
+							name="journal-plus"
+							class="bi m-auto text-primary"
+							style="font-size: 4.5rem;"
+						/>
 					</div>
 					<h3>新曲を自動追加！</h3>
 					<p class="lead mb-0">
 						アーティストのニューリリースを監視して、すばやくプレイリストに追加します。
 					</p>
 				</div>
-			</div>
-			<div class="col-lg-4">
+			</Col>
+			<Col lg="4">
 				<div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
 					<div class="features-icons-icon d-flex">
-						<i class="bi bi-journal-minus m-auto text-primary" />
+						<Icon name="journal-minus" class="m-auto text-primary" style="font-size: 4.5rem;" />
 					</div>
 					<h3>古い曲を自動削除！</h3>
 					<p class="lead mb-0">
 						プレイリスト内でリリースから指定した期間が経過した曲を、自動で削除します。
 					</p>
 				</div>
-			</div>
+			</Col>
 			<div class="col-lg-4">
 				<div class="features-icons-item mx-auto mb-0 mb-lg-3">
 					<div class="features-icons-icon d-flex">
-						<i class="bi bi-headphones m-auto text-primary" />
+						<Icon name="headphones" class="m-auto text-primary" style="font-size: 4.5rem;" />
 					</div>
 					<h3>Let's enjoy your music!</h3>
 					<p class="lead mb-0">
@@ -54,8 +65,8 @@
 					</p>
 				</div>
 			</div>
-		</div>
-	</div>
+		</Row>
+	</Container>
 </section>
 
 <style>

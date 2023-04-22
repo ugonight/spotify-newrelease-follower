@@ -1,4 +1,8 @@
-<div class="container py-4 px-3 mx-auto">
+<script>
+	import { Container } from 'sveltestrap';
+</script>
+
+<Container class="py-4 px-3 mx-auto">
     <h1 id='cookie-ポリシー'>Cookie ポリシー</h1>
     <p>ugonight（以下、「当社」といいます。）は、お客様のウェブサイト利用状況を分析し、または個々のお客様に対してカスタマイズされたサービス・広告を提供する等の目的のため、Cookieを使用して一定の情報を収集します。</p>
     <h2 id='1cookieについて'>1．Cookieについて</h2>
@@ -12,4 +16,4 @@
         Cookieの設定の変更方法については、各ブラウザの製造元へご確認ください。</p>
     <p>&nbsp;</p>
     <p>以上</p>
-</div>
+</Container>

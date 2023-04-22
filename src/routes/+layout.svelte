@@ -1,6 +1,5 @@
 <script>
-	import '../app.scss';
-	import 'bootstrap-icons/font/bootstrap-icons.css';
+	import { Styles, Navbar, NavbarBrand, Container, Row, Col, Alert, Icon } from 'sveltestrap';
 	import Spotify_Logo from '$lib/images/Spotify_Logo_RGB_Green.png';
 </script>
 
@@ -9,21 +8,23 @@
 	<meta name="description" content="Spotify新曲プレイリスト自動管理ツール" />
 </svelte:head>
 
+<Styles />
+
 <!-- Navigation-->
-<nav class="navbar navbar-light bg-light static-top">
-	<div class="container justify-content-center justify-content-lg-between">
-		<a class="navbar-brand" href="/">Spotify New Release Follower</a>
+<Navbar color="light" light class="bg-light static-top">
+	<Container class="justify-content-center justify-content-lg-between">
+		<NavbarBrand href="/">Spotify New Release Follower</NavbarBrand>
 		<!-- <a class="btn btn-primary" href="#signup">Sign in with Spotify</a> -->
-	</div>
-</nav>
+	</Container>
+</Navbar>
 
 <slot />
 
 <!-- Footer-->
 <footer class="footer bg-light">
-	<div class="container">
-		<div class="row text-center">
-			<div class="col-lg">
+	<Container class="container">
+		<Row class="text-center">
+			<Col lg>
 				<p class="text-muted mb-4 mb-lg-0">
 					このWebサービスは <a
 						href="https://www.spotify.com/jp/"
@@ -31,8 +32,8 @@
 						rel="noopener noreferrer"><img src={Spotify_Logo} width="100" alt="Spotify" /></a
 					> を利用しています。
 				</p>
-			</div>
-			<div class="col-lg">
+			</Col>
+			<Col lg>
 				<ul class="list-inline mb-2">
 					<!-- <li class="list-inline-item"><a href="#!">About</a></li>
 					<li class="list-inline-item">⋅</li> -->
@@ -44,15 +45,15 @@
 					<li class="list-inline-item">⋅</li>
 					<li class="list-inline-item"><a href="/cookie-policy">Cookie ポリシー</a></li>
 				</ul>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-6">
+			</Col>
+		</Row>
+		<Row>
+			<Col lg="6">
 				<p class="text-muted small text-center text-lg-start my-4 mb-4 mb-lg-0">
 					&copy; 2022 ugonight
 				</p>
-			</div>
-			<div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+			</Col>
+			<Col lg="6" class="h-100 text-center text-lg-end my-auto">
 				<ul class="list-inline mb-0">
 					<li class="list-inline-item me-4">
 						<a href="https://twitter.com/ugonight_nanase" target="_blank" rel="noopener noreferrer"
@@ -67,13 +68,13 @@
 						>
 					</li>
 				</ul>
-			</div>
-		</div>
-	</div>
-	<div class="alert alert-danger d-flex align-items-center mt-3 mx-3" role="alert">
-		<i class="bi bi-exclamation-triangle fs-2 mx-4"></i>
-		<div>このWebサイトは現在開発中です！<br>This website is currently under development!</div>
-	</div>
+			</Col>
+		</Row>
+	</Container>
+	<Alert color="danger" class="d-flex align-items-center mt-3 mx-3" role="alert">
+		<Icon name="exclamation-triangle" class="fs-2 mx-4" />
+		<div>このWebサイトは現在開発中です！<br />This website is currently under development!</div>
+	</Alert>
 </footer>
 
 <style>
