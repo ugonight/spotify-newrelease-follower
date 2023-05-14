@@ -49,9 +49,9 @@
 		</Row>
 		<Row>
 			<Col lg="6">
-				<p class="text-muted small text-center text-lg-start my-4 mb-4 mb-lg-0">
+				<small class="text-muted small text-center text-lg-start my-4 mb-4 mb-lg-0">
 					&copy; 2022 ugonight
-				</p>
+				</small>
 			</Col>
 			<Col lg="6" class="h-100 text-center text-lg-end my-auto">
 				<ul class="list-inline mb-0">

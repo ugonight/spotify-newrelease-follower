@@ -1,20 +1,15 @@
 <script lang="ts">
+	import List from './list.svelte';
+	import Detail from './detail.svelte';
+	import type { StateType } from '$lib/entity';
+
 	import type { PageData } from './$types';
-	import {
-		Container,
-		Row,
-		Button,
-		Tooltip,
-		Nav,
-		NavItem,
-		NavLink,
-		Icon,
-		Badge,
-		ListGroup,
-		ListGroupItem
-	} from 'sveltestrap';
+	import { fade } from 'svelte/transition';
+	import { Container, Row, Nav, NavItem, NavLink, Icon, Button, Tooltip, Badge } from 'sveltestrap';
 
 	export let data: PageData;
+
+	let state: StateType = 'list';
 </script>
 
 <Container fluid>
@@ -58,7 +53,18 @@
 			<div
 				class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom"
 			>
-				<h1 class="h2">管理プレイリスト一覧</h1>
+				<h1 class="h2" transition:fade={{ duration: 100 }}>
+					{#if state == 'detail'}
+						<Button
+							size="lg"
+							class="bi bi-chevron-left bg-transparent"
+							color="light"
+							id="btn-back-list"
+							on:click={() => (state = 'list')}
+						/>
+					{/if}
+					管理プレイリスト一覧
+				</h1>
 				<div class="mb-2 mb-md-0">
 					<span>
 						<Button
@@ -78,28 +84,16 @@
 					</span>
 				</div>
 			</div>
-			<div>
-				<span>
-					<Button class="bi bi-folder-plus" outline  color="secondary" id="btn-add-from-exist" />
-					<Tooltip target="btn-add-from-exist" placement="bottom">既存プレイリストを管理対象に追加</Tooltip>
-				</span>
-				<span>
-					<Button class="bi bi-file-earmark-plus" outline  color="secondary" id="btn-add-new" />
-					<Tooltip target="btn-add-new" placement="bottom">新規プレイリストを作成して管理</Tooltip>
-				</span>
-				<hr class="my-3"/>
-				<ul class="list-group list-group-flush">
-					<a href="#" class="list-group-item list-group-item-action playlist-list-item"
-						>プレイリスト1</a
-					>
-					<a href="#" class="list-group-item list-group-item-action playlist-list-item"
-						>プレイリスト2</a
-					>
-					<a href="#" class="list-group-item list-group-item-action playlist-list-item"
-						>プレイリスト3</a
-					>
-				</ul>
-			</div>
+
+			{#if state === 'list'}
+				<div transition:fade={{ duration: 100 }}>
+					<List bind:state />
+				</div>
+			{:else}
+				<div transition:fade={{ duration: 100 }}>
+					<Detail />
+				</div>
+			{/if}
 		</main>
 	</Row>
 </Container>
@@ -198,9 +192,5 @@
 		position: absolute;
 		top: 0.2rem;
 		left: 1.7rem;
-	}
-
-	.playlist-list-item {
-		padding: 1rem 1rem;
 	}
 </style>
