@@ -76,7 +76,7 @@
 					</div>
 				</AccordionItem>
 			</Accordion>
-		</Col>
+		<Col md={2}/>
 	</Row>
 
 	<Row class="sticky-top border-bottom bg-white my-3 align-items-center">
