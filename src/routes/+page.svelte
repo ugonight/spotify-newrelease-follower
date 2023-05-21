@@ -10,13 +10,15 @@
 				<div class="text-center text-white">
 					<!-- Page heading-->
 					<h1 class="mb-5">Spotify新曲プレイリスト<br class="d-sm-none" />自動管理ツール</h1>
-					<Button color="success" size="lg" href="/login/authorize"
-						>Spotify でログインしてはじめる</Button
-					>
+					<Button color="success" size="lg" href="/login/authorize">
+						Spotify でログインしてはじめる
+					</Button>
 					<p class="mt-3">
-						ログインすると<a href="/terms-of-use">利用規約</a>・<a href="/privacy-policy"
-							>プライバシーポリシー</a
-						>・<a href="/cookie-policy">Cookie ポリシー</a>に同意したものとみなされます。
+						<small>
+							ログインすると<a href="/terms-of-use">利用規約</a>・<a href="/privacy-policy"
+								>プライバシーポリシー</a
+							>・<a href="/cookie-policy">Cookie ポリシー</a>に同意したものとみなされます。
+						</small>
 					</p>
 				</div>
 			</Col>

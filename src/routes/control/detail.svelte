@@ -32,21 +32,23 @@
 </script>
 
 <Container class="my-3">
-	<Row class="my-2">
-		<Col md={6}><Image thumbnail alt="Playlist Image" src="" /></Col>
-		<Col md={6}>
+	<Row class="my-2 text-center">
+		<Col md={2}/>
+		<Col md={3} ><Image class="my-3" thumbnail alt="Playlist Image" src="" /></Col>
+		<Col md={5}>
 			<h1>プレイリスト名</h1>
 			曲数, 公開／非公開<br />
 			監視対象アーティスト数: 1<br />
 			監視対象プレイリスト数: 1<br />
 			期間: 1年間<br />
 		</Col>
+		<Col md={2}/>
 	</Row>
 	<Row class="my-2">
 		<Col>
 			<Card>
 				<CardHeader>履歴</CardHeader>
-				<CardBody class="overflow-auto" style="height: 200px;">
+				<CardBody class="overflow-auto" style="height: 50vh;">
 					<ListGroup flush>
 						<ListGroupItem class="bg-success bg-opacity-10">
 							<Row>
@@ -81,7 +83,7 @@
 			<h2>設定</h2>
 		</Col>
 		<Col class="ms-auto">
-			<Button color="secondary" block>変更を保存</Button>
+			<Button color="secondary" block class="my-2">変更を保存</Button>
 		</Col>
 	</Row>
 
@@ -94,7 +96,7 @@
 						<Button class="bi bi-plus-lg" outline color="secondary" id="btn-add-watch" />
 						<Tooltip target="btn-add-watch" placement="bottom">管理対象を追加</Tooltip>
 					</span>
-					<div class="overflow-auto" style="height: 200px;">
+					<div class="overflow-auto" style="height: 50vh;">
 						<Table hover>
 							<thead>
 								<tr>
