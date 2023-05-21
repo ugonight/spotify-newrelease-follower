@@ -53,33 +53,41 @@
 			<div
 				class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom"
 			>
-				<h1 class="h2" transition:fade={{ duration: 100 }}>
+				<div class="d-flex">
 					{#if state == 'detail'}
 						<Button
-							size="lg"
-							class="bi bi-chevron-left bg-transparent"
-							color="light"
+							class="bi bi-chevron-left me-2"
+							color="secondary"
+							outline
 							id="btn-back-list"
 							on:click={() => (state = 'list')}
 						/>
+						<div class="d-none d-sm-block ms-3 main-head-text">プレイリスト1</div>
+					{:else}
+						<div class="main-head-text">管理プレイリスト一覧</div>
 					{/if}
-					管理プレイリスト一覧
-				</h1>
-				<div class="mb-2 mb-md-0">
-					<span>
+				</div>
+
+				<div class="me-md-5">
+					<span class="me-2">
 						<Button
-							size="lg"
-							class="bi bi-bell bg-transparent"
-							color="light"
+							class="bi bi-bell position-relative"
+							color="secondary"
+							outline
 							id="btn-notification"
-							style="position: relative;"
 						>
-							<h6 id="notification-badge"><Badge color="secondary" pill>4</Badge></h6>
+							<Badge
+								color="secondary"
+								pill
+								class="position-absolute top-0 start-100 translate-middle"
+							>
+								4
+							</Badge>
 						</Button>
 						<Tooltip target="btn-notification" placement="bottom">通知</Tooltip>
 					</span>
 					<span>
-						<Button size="lg" class="bi bi-gear bg-transparent" color="light" id="btn-setting" />
+						<Button class="bi bi-gear" color="secondary" outline id="btn-setting" />
 						<Tooltip target="btn-setting" placement="bottom">設定</Tooltip>
 					</span>
 				</div>
@@ -188,9 +196,14 @@
 		border-bottom: 1px solid #e5e5e5;
 	}
 
-	#notification-badge {
-		position: absolute;
-		top: 0.2rem;
-		left: 1.7rem;
+	.main-head-text {
+		font-size: 2rem;
+		font-weight: bold;
+	}
+
+	@media (max-width: 575.98px) {
+		.main-head-text {
+			font-size: 1.5rem;
+		}
 	}
 </style>
