@@ -26,7 +26,11 @@
 		InputGroupText
 	} from 'sveltestrap';
 
+	import AddArtistsAndPlaylists from './modal/addArtistsAndPlaylists.svelte';
+
 	import type { StateType } from '$lib/entity';
+
+	let openAddArtistsAndPlaylists = false;
 
 	let radioGroup: number;
 </script>
@@ -76,7 +80,7 @@
 					</div>
 				</AccordionItem>
 			</Accordion>
-		<Col md={2}/>
+		</Col>
 	</Row>
 
 	<Row class="sticky-top border-bottom bg-white my-3 align-items-center">
@@ -94,7 +98,7 @@
 				<CardHeader>監視対象</CardHeader>
 				<CardBody>
 					<span>
-						<Button class="bi bi-plus-lg" outline color="secondary" id="btn-add-watch" />
+						<Button class="bi bi-plus-lg" outline color="secondary" id="btn-add-watch" on:click={() => (openAddArtistsAndPlaylists = true)}/>
 						<Tooltip target="btn-add-watch" placement="bottom">管理対象を追加</Tooltip>
 					</span>
 					<div class="overflow-auto" style="height: 50vh;">
@@ -268,6 +272,8 @@
 			</Card>
 		</Col>
 	</Row>
+
+	<AddArtistsAndPlaylists bind:open={openAddArtistsAndPlaylists} />
 </Container>
 
 <!-- <Accordion stayOpen>

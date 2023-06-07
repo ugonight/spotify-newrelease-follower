@@ -2,7 +2,10 @@
 	import { Row, Col, Button, Tooltip, Badge } from 'sveltestrap';
 	import type { StateType } from '$lib/entity';
 
+	import OpenPlaylistsModal from './modal/openPlaylists.svelte';
+
 	export let state: StateType;
+	let openOpenPlaylistsModal = false;
 
 	function handlePlaylistItemClick(index: number) {
 		state = 'detail';
@@ -11,14 +14,24 @@
 
 <div>
 	<span>
-		<Button class="bi bi-folder-plus" outline color="secondary" id="btn-add-from-exist" />
-		<Tooltip target="btn-add-from-exist" placement="bottom"
-			>既存プレイリストを管理対象に追加</Tooltip
-		>
+		<Button
+			class="bi bi-folder-plus"
+			outline
+			color="secondary"
+			id="btn-add-from-exist"
+			on:click={() => (openOpenPlaylistsModal = true)}
+		/>
+		{#if !openOpenPlaylistsModal}
+			<Tooltip target="btn-add-from-exist" placement="bottom"
+				>既存プレイリストを管理対象に追加</Tooltip
+			>
+		{/if}
 	</span>
 	<span>
 		<Button class="bi bi-file-earmark-plus" outline color="secondary" id="btn-add-new" />
-		<Tooltip target="btn-add-new" placement="bottom">新規プレイリストを作成して管理</Tooltip>
+		{#if !openOpenPlaylistsModal}
+			<Tooltip target="btn-add-new" placement="bottom">新規プレイリストを作成して管理</Tooltip>
+		{/if}
 	</span>
 	<hr class="my-3" />
 	<div class="d-none d-md-block">
@@ -64,6 +77,8 @@
 		</button>
 	</ul>
 </div>
+
+<OpenPlaylistsModal bind:open={openOpenPlaylistsModal} />
 
 <style>
 	.playlist-list-item {

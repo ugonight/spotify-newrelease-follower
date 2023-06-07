@@ -1,11 +1,16 @@
 <script lang="ts">
 	import List from './list.svelte';
 	import Detail from './detail.svelte';
+	import Notification from './modal/notification.svelte';
 	import type { StateType } from '$lib/entity';
 
 	import type { PageData } from './$types';
 	import { fade } from 'svelte/transition';
 	import { Container, Row, Nav, NavItem, NavLink, Icon, Button, Tooltip, Badge } from 'sveltestrap';
+
+	let openNotificationModal = false;
+
+	$: isAnyModalOpen = openNotificationModal;
 
 	export let data: PageData;
 
@@ -75,6 +80,7 @@
 							color="secondary"
 							outline
 							id="btn-notification"
+							on:click={() => (openNotificationModal = true)}
 						>
 							<Badge
 								color="secondary"
@@ -84,11 +90,15 @@
 								4
 							</Badge>
 						</Button>
-						<Tooltip target="btn-notification" placement="bottom">通知</Tooltip>
+						{#if isAnyModalOpen}
+							<Tooltip target="btn-notification" placement="bottom">通知</Tooltip>
+						{/if}
 					</span>
 					<span>
 						<Button class="bi bi-gear" color="secondary" outline id="btn-setting" />
-						<Tooltip target="btn-setting" placement="bottom">設定</Tooltip>
+						{#if isAnyModalOpen}
+							<Tooltip target="btn-setting" placement="bottom">設定</Tooltip>
+						{/if}
 					</span>
 				</div>
 			</div>
@@ -104,6 +114,8 @@
 			{/if}
 		</main>
 	</Row>
+
+	<Notification bind:open={openNotificationModal} />
 </Container>
 
 <style>
