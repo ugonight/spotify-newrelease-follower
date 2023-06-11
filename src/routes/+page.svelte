@@ -10,7 +10,7 @@
 				<div class="text-center text-white">
 					<!-- Page heading-->
 					<h1 class="mb-5">Spotify新曲プレイリスト<br class="d-sm-none" />自動管理ツール</h1>
-					<Button color="success" size="lg" href="/login/authorize">
+					<Button color="success" size="lg" href="/login">
 						Spotify でログインしてはじめる
 					</Button>
 					<p class="mt-3">
