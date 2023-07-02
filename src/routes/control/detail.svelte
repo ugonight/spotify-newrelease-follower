@@ -1,30 +1,24 @@
 <script lang="ts">
 	import {
-		Row,
-		Col,
 		Button,
 		Tooltip,
 		Badge,
 		Card,
-		CardBody,
-		CardHeader,
-		CardSubtitle,
-		CardText,
-		CardTitle,
 		Accordion,
 		AccordionItem,
-		Image,
-		Container,
+		Img,
 		Table,
-		Icon,
-		ListGroup,
-		ListGroupItem,
-		Form,
-		FormGroup,
 		Input,
-		InputGroup,
-		InputGroupText
-	} from 'sveltestrap';
+		TableHead,
+		TableHeadCell,
+		TableBody,
+		TableBodyRow,
+		TableBodyCell,
+		Radio,
+		ButtonGroup,
+		InputAddon,
+		Checkbox
+	} from 'flowbite-svelte';
 
 	import AddArtistsAndPlaylists from './modal/addArtistsAndPlaylists.svelte';
 
@@ -35,249 +29,179 @@
 	let radioGroup: number;
 </script>
 
-<Container class="my-3">
-	<Row class="my-2 text-center">
-		<Col md={2} />
-		<Col md={3}><Image class="my-3" thumbnail alt="Playlist Image" src="" /></Col>
-		<Col md={5}>
-			<h1>プレイリスト名</h1>
-			曲数, 公開／非公開<br />
-			監視対象アーティスト数: 1<br />
-			監視対象プレイリスト数: 1<br />
-			期間: 1年間<br />
-		</Col>
-		<Col md={2} />
-	</Row>
-	<Row class="my-2">
-		<Col>
-			<Accordion>
-				<AccordionItem header="履歴">
-					<div class="overflow-auto" style="height: 50vh;">
-						<ListGroup flush>
-							<ListGroupItem class="bg-success bg-opacity-10">
-								<Row>
-									<Col xs="3" class="d-flex">
-										<Icon name="plus" />
-										<span class="d-none d-md-block"> 追加</span>
-									</Col>
-									<Col xs="4">曲名1</Col>
-									<Col xs="3" class="d-none d-md-block">アーティスト1</Col>
-									<Col xs="2" class="d-none d-md-block">yyyy/MM/dd</Col>
-								</Row>
-							</ListGroupItem>
-							<ListGroupItem class="bg-danger bg-opacity-10">
-								<Row>
-									<Col xs="3" class="d-flex">
-										<Icon name="dash" />
-										<span class="d-none d-md-block"> 削除</span>
-									</Col>
-									<Col xs="4">曲名2</Col>
-									<Col xs="3" class="d-none d-md-block" />
-									<Col xs="2" class="d-none d-md-block">yyyy/MM/dd</Col>
-								</Row>
-							</ListGroupItem>
-						</ListGroup>
-					</div>
-				</AccordionItem>
-			</Accordion>
-		</Col>
-	</Row>
+<div class="container my-3 flex flex-col">
+	<div class="my-2 flex flex-col justify-center md:flex-row">
+		<Img class="mx-auto my-3" alt="Playlist Image" src="" />
+		<div class="mx-auto">
+			<h1 class="my-6 text-center text-4xl font-bold">プレイリスト名</h1>
+			<ul class="list-disc text-left text-sm text-gray-500 underline">
+				<li>曲数, 公開／非公開</li>
+				<li>監視対象アーティスト数: 1</li>
+				<li>監視対象プレイリスト数: 1</li>
+				<li>期間: 1年間</li>
+			</ul>
+		</div>
+	</div>
+	<div class="my-2">
+		<Accordion>
+			<AccordionItem paddingDefault="p-3">
+				<span slot="header">履歴</span>
+				<div class="overflow-auto" style="height: 50vh;">
+					<Table>
+						<TableBody>
+							{#each new Array(100) as cat}
+								<TableBodyRow class="bg-green-300 bg-opacity-10">
+									<TableBodyCell>
+										<i class="bi bi-plus" />
+										<span> 追加</span>
+									</TableBodyCell>
+									<TableBodyCell>曲名1</TableBodyCell>
+									<TableBodyCell>アーティスト1</TableBodyCell>
+									<TableBodyCell>yyyy/MM/dd</TableBodyCell>
+								</TableBodyRow>
+								<TableBodyRow class="bg-red-300 bg-opacity-10">
+									<TableBodyCell>
+										<i class="bi bi-dash" />
+										<span> 削除</span>
+									</TableBodyCell>
+									<TableBodyCell>曲名2</TableBodyCell>
+									<TableBodyCell />
+									<TableBodyCell>yyyy/MM/dd</TableBodyCell>
+								</TableBodyRow>
+							{/each}
+						</TableBody>
+					</Table>
+				</div>
+			</AccordionItem>
+		</Accordion>
+	</div>
 
-	<Row class="sticky-top border-bottom bg-white my-3 align-items-center">
-		<Col>
-			<h2>設定</h2>
-		</Col>
-		<Col class="ms-auto">
-			<Button color="secondary" block class="my-2">変更を保存</Button>
-		</Col>
-	</Row>
+	<div class="sticky top-0 z-10 my-3 flex flex-row items-center border-b bg-white">
+		<div>
+			<h2 class="text-2xl ms-3">設定</h2>
+		</div>
+		<div class="ms-auto">
+			<Button color="light" block class="my-2">変更を保存</Button>
+		</div>
+	</div>
 
-	<Row>
-		<Col>
-			<Card class="mb-3">
-				<CardHeader>監視対象</CardHeader>
-				<CardBody>
-					<span>
-						<Button class="bi bi-plus-lg" outline color="secondary" id="btn-add-watch" on:click={() => (openAddArtistsAndPlaylists = true)}/>
-						<Tooltip target="btn-add-watch" placement="bottom">管理対象を追加</Tooltip>
-					</span>
-					<div class="overflow-auto" style="height: 50vh;">
-						<Table hover>
-							<thead>
-								<tr>
-									<th>#</th>
-									<th>名前</th>
-									<th>削除</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<th scope="row">1</th>
-									<td><Icon name="person" /> アーティスト1</td>
-									<td>
-										<Icon
-											class="link-danger"
-											name="dash-circle-fill"
-											style="cursor: pointer;"
-											onclick={() => {}}
-										/>
-									</td>
-								</tr>
-								<tr>
-									<th scope="row">2</th>
-									<td><Icon name="music-note-list" /> プレイリスト1</td>
-									<td>
-										<Icon
-											class="link-danger"
-											name="dash-circle-fill"
-											style="cursor: pointer;"
-											onclick={() => {}}
-										/>
-									</td>
-								</tr>
-							</tbody>
-						</Table>
-					</div>
-				</CardBody>
-			</Card>
-		</Col>
-	</Row>
-	<Row>
-		<Col>
-			<Card class="mb-3">
-				<CardHeader>自動削除期間</CardHeader>
-				<CardBody>
-					<Form>
-						<FormGroup>
-							<Row class="my-3">
-								<Col>
-									<Input
-										id="r0"
-										type="radio"
-										bind:group={radioGroup}
-										value={0}
-										label="削除しない"
-									/>
-								</Col>
-							</Row>
-							<Row class="my-3">
-								<Col>
-									<Row class="mb-2">
-										<Col>
-											<Input
-												id="r1"
-												type="radio"
-												bind:group={radioGroup}
-												value={1}
-												label="リリース日から経過した曲を削除"
-											/>
-										</Col>
-									</Row>
-									<Row class="ms-4">
-										<Col>
-											<InputGroup class="my-1">
-												<InputGroupText>年</InputGroupText>
-												<Input
-													type="number"
-													name="number"
-													id="exampleDate"
-													value="0"
-													min="0"
-													disabled={radioGroup !== 1}
-												/>
-											</InputGroup>
-											<InputGroup class="my-1">
-												<InputGroupText>月</InputGroupText>
-												<Input
-													type="number"
-													name="number"
-													id="exampleDate"
-													value="0"
-													min="0"
-													disabled={radioGroup !== 1}
-												/>
-											</InputGroup>
-											<InputGroup class="my-1">
-												<InputGroupText>日</InputGroupText>
-												<Input
-													type="number"
-													name="number"
-													id="exampleDate"
-													value="0"
-													min="0"
-													disabled={radioGroup !== 1}
-												/>
-											</InputGroup>
-										</Col>
-										<Col xs={0} lg={4} />
-									</Row>
-								</Col>
-							</Row>
-							<Row class="my-3">
-								<Col>
-									<Row class="mb-2">
-										<Col>
-											<Input
-												id="r2"
-												type="radio"
-												bind:group={radioGroup}
-												value={2}
-												label="指定期間内にリリースされた曲以外を削除"
-											/>
-										</Col>
-									</Row>
-									<Row class="ms-4">
-										<Col>
-											<Row class="align-items-center">
-												<Col sm={5}>
-													<Input
-														type="date"
-														name="date"
-														id="exampleDate"
-														placeholder="date placeholder"
-														disabled={radioGroup !== 2}
-													/>
-												</Col>
-												<Col sm={2} class="text-center">～</Col>
-												<Col sm={5}>
-													<Input
-														type="date"
-														name="date"
-														id="exampleDate"
-														placeholder="date placeholder"
-														disabled={radioGroup !== 2}
-													/>
-												</Col>
-											</Row>
-										</Col>
-										<Col xs={0} lg={4} />
-									</Row>
-								</Col>
-							</Row>
-						</FormGroup>
-					</Form>
-				</CardBody>
-			</Card>
-		</Col>
-	</Row>
-	<Row>
-		<Col>
-			<Card class="mb-3">
-				<CardHeader>その他設定</CardHeader>
-				<CardBody>
-					<FormGroup>
-						<Input id="c1" type="checkbox" label="同じアーティストの同じ曲名の曲は追加しない" />
-					</FormGroup>
-				</CardBody>
-			</Card>
-		</Col>
-	</Row>
+	<Card class="mb-3 flex flex-col" size="xl">
+		<h3 class="mb-3 border-b text-xl">監視対象</h3>
+		<Button
+			class="bi bi-plus-lg my-3"
+			outline
+			size="sm"
+			color="light"
+			id="btn-add-watch"
+			on:click={() => (openAddArtistsAndPlaylists = true)}
+		/>
+		<Tooltip target="btn-add-watch" class="z-10" placement="bottom">管理対象を追加</Tooltip>
+		<div class="overflow-auto" style="height: 50vh;">
+			<Table hoverable>
+				<TableHead>
+					<TableHeadCell>#</TableHeadCell>
+					<TableHeadCell>名前</TableHeadCell>
+					<TableHeadCell>削除</TableHeadCell>
+				</TableHead>
+				<TableBody>
+					<TableBodyRow>
+						<TableBodyCell tdClass="font-bold">1</TableBodyCell>
+						<TableBodyCell><i class="bi bi-person" /> アーティスト1</TableBodyCell>
+						<TableBodyCell>
+							<button
+								class="bi bi-dash-circle-fill cursor-pointer text-red-600 hover:text-red-800"
+								on:click={() => {}}
+							/>
+						</TableBodyCell>
+					</TableBodyRow>
+					<TableBodyRow>
+						<TableBodyCell tdClass="font-bold">2</TableBodyCell>
+						<TableBodyCell><i class="bi bi-music-note-list" /> プレイリスト1</TableBodyCell>
+						<TableBodyCell>
+							<button
+								class="bi bi-dash-circle-fill cursor-pointer text-red-600 hover:text-red-800"
+								on:click={() => {}}
+							/>
+						</TableBodyCell>
+					</TableBodyRow>
+				</TableBody>
+			</Table>
+		</div>
+	</Card>
+	<Card class="mb-3" size="xl">
+		<h3 class="mb-3 border-b text-xl">自動削除期間</h3>
+		<form class="flex flex-col">
+			<div class="my-3">
+				<Radio id="r0" bind:group={radioGroup} value={0}>削除しない</Radio>
+			</div>
+			<div class="my-3">
+				<Radio id="r1" bind:group={radioGroup} value={1} class="mb-2">
+					リリース日から時間が経過した曲を削除
+				</Radio>
+				<div class="ms-4 flex flex-col">
+					<ButtonGroup class="my-1">
+						<InputAddon>年</InputAddon>
+						<Input
+							type="number"
+							name="number"
+							id="exampleDate"
+							value="0"
+							min="0"
+							disabled={radioGroup !== 1}
+						/>
+					</ButtonGroup>
+					<ButtonGroup class="my-1">
+						<InputAddon>月</InputAddon>
+						<Input
+							type="number"
+							name="number"
+							id="exampleDate"
+							value="0"
+							min="0"
+							disabled={radioGroup !== 1}
+						/>
+					</ButtonGroup>
+					<ButtonGroup class="my-1">
+						<InputAddon>日</InputAddon>
+						<Input
+							type="number"
+							name="number"
+							id="exampleDate"
+							value="0"
+							min="0"
+							disabled={radioGroup !== 1}
+						/>
+					</ButtonGroup>
+				</div>
+			</div>
+			<div class="my-3">
+				<Radio id="r2" type="radio" bind:group={radioGroup} value={2}>
+					指定期間内にリリースされた曲以外を削除
+				</Radio>
+				<div class="ms-4 mt-3 flex flex-col items-center">
+					<Input
+						type="date"
+						name="date"
+						id="exampleDate"
+						placeholder="date placeholder"
+						disabled={radioGroup !== 2}
+					/>
+					<div class="text-center">～</div>
+					<Input
+						type="date"
+						name="date"
+						id="exampleDate"
+						placeholder="date placeholder"
+						disabled={radioGroup !== 2}
+					/>
+				</div>
+			</div>
+		</form>
+	</Card>
+	<Card class="mb-3" size="xl">
+		<h3 class="mb-3 border-b text-xl">その他設定</h3>
+		<Checkbox id="c1">同じアーティストの同じ曲名の曲は追加しない</Checkbox>
+	</Card>
 
 	<AddArtistsAndPlaylists bind:open={openAddArtistsAndPlaylists} />
-</Container>
-
-<!-- <Accordion stayOpen>
-		<AccordionItem class="my-2" active header="監視対象">Alpha Flight</AccordionItem>
-		<AccordionItem class="my-2" active header="期間">Johnny Bravo</AccordionItem>
-		<AccordionItem class="my-2" active header="その他設定">Charlie Brown</AccordionItem>
-	</Accordion> -->
+</div>

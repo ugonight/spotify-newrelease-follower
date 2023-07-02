@@ -1,8 +1,4 @@
-<script>
-	import { Container } from 'sveltestrap';
-</script>
-
-<Container class="py-4 px-3 mx-auto">
+<div class="container py-4 px-3 mx-auto">
 	<h1 id="利用規約">利用規約</h1>
 	<p>
 		この利用規約（以下、「本規約」といいます。）は、ugonight（以下、「当社」といいます。）がこのウェブサイト上で提供するサービス（以下、「本サービス」といいます。）の利用条件を定めるものです。登録ユーザーの皆さま（以下、「ユーザー」といいます。）には、本規約に従って、本サービスをご利用いただきます。
@@ -194,4 +190,104 @@
 	<p>本規約の解釈にあたっては、日本法を準拠法とします。</p>
 	<p>&nbsp;</p>
 	<p>以上</p>
-</Container>
+</div>
+
+<style>
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		white-space: pre-wrap;
+	}
+
+	p {
+		line-height: inherit;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		break-after: avoid-page;
+		break-inside: avoid;
+		orphans: 4;
+	}
+
+	p {
+		orphans: 4;
+	}
+
+	h1 {
+		font-size: 2rem;
+	}
+
+	h2 {
+		font-size: 1.8rem;
+	}
+
+	h3 {
+		font-size: 1.6rem;
+	}
+
+	h4 {
+		font-size: 1.4rem;
+	}
+
+	h5 {
+		font-size: 1.2rem;
+	}
+
+	h6 {
+		font-size: 1rem;
+	}
+
+	p,
+	blockquote,
+	ul,
+	ol,
+	dl,
+	table {
+		margin: 0.8em 0;
+	}
+
+	li > ol,
+	li > ul {
+		margin: 0 0;
+	}
+
+	hr {
+		height: 2px;
+		padding: 0;
+		margin: 16px 0;
+		background-color: #e7e7e7;
+		border: 0 none;
+		overflow: hidden;
+		box-sizing: content-box;
+	}
+
+	li {
+		list-style-type: disc;
+	}
+
+	li p.first {
+		display: inline-block;
+	}
+
+	ul,
+	ol {
+		padding-left: 30px;
+	}
+
+	ul:first-child,
+	ol:first-child {
+		margin-top: 0;
+	}
+
+	ul:last-child,
+	ol:last-child {
+		margin-bottom: 0;
+	}
+</style>

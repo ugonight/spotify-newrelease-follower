@@ -1,57 +1,45 @@
 <script lang="ts">
 	import type { PageData, ActionData } from './$types';
-	import { Container, Row, Col, Alert, Icon, Card, CardBody, Form, Button } from 'sveltestrap';
+	import { Alert, Card, Button, Label, Input, Textarea } from 'flowbite-svelte';
 
 	export let form: ActionData;
 </script>
 
-<Container class="py-4 px-3 mx-auto">
-	<Row class="my-4 text-center">
-		<Col>
-			<h1>お問い合わせ</h1>
-		</Col>
-	</Row>
-	<Row class="my-3 text-center">
-		<Col>ご意見・ご要望・その他何かありましたら、こちらでご連絡をお願いします。</Col>
-	</Row>
+<div class="container mx-auto flex flex-col px-3 py-4">
+	<div class="my-4 text-center">
+		<h1 class="text-4xl font-bold">お問い合わせ</h1>
+	</div>
+	<div class="my-3 text-center">
+		ご意見・ご要望・その他何かありましたら、こちらでご連絡をお願いします。
+	</div>
 	{#if form?.status == 'success'}
-		<Alert color="success" class="d-flex align-items-center" role="alert">
-			<Icon name="check-circle-fill" />
+		<Alert color="green" class="d-flex align-items-center" role="alert">
+			<i class="bi-check-circle-fill" />
 			<div>送信に成功しました。</div>
 		</Alert>
 	{:else if form?.status == 'error'}
-		<Alert color="danger" class="d-flex align-items-center" role="alert">
-			<Icon name="exclamation-triangle-fill" />
+		<Alert color="red" class="d-flex align-items-center" role="alert">
+			<i class="bi-exclamation-triangle-fill" />
 			<div>送信に失敗しました。しばらく経ってから再度お試しください。</div>
 		</Alert>
 	{/if}
-	<Row class="mb-5">
-		<Col class="mx-6">
-			<Card>
-				<CardBody class="bg-light text-left">
-					<Form class="needs-validation" method="POST">
-						<div class="mb-3">
-							<label for="name" class="form-label"
-								>お名前<span class="text-danger">(必須)</span></label
-							>
-							<input type="text" class="form-control" id="name" name="name" required />
-						</div>
-						<div class="mb-3">
-							<label for="email" class="form-label"
-								>メールアドレス<span class="text-danger">(必須)</span></label
-							>
-							<input type="email" class="form-control" id="email" name="email" required />
-						</div>
-						<div class="mb-3">
-							<label for="content" class="form-label"
-								>内容<span class="text-danger">(必須)</span></label
-							>
-							<textarea class="form-control" id="content" name="content" rows="5" required />
-						</div>
-						<Button color="secondary" type="submit">送信</Button>
-					</Form>
-				</CardBody>
-			</Card>
-		</Col>
-	</Row>
-</Container>
+	<div class="mb-5">
+		<Card class="mx-auto" size="xl">
+			<form class="needs-validation" method="POST">
+				<div class="mb-3">
+					<Label for="name">お名前<span class="text-red-500">(必須)</span></Label>
+					<Input type="text" id="name" name="name" required />
+				</div>
+				<div class="mb-3">
+					<Label for="email">メールアドレス<span class="text-red-500">(必須)</span></Label>
+					<Input type="email" id="email" name="email" required />
+				</div>
+				<div class="mb-3">
+					<Label for="content">内容<span class="text-red-500">(必須)</span></Label>
+					<Textarea id="content" name="content" rows="5" required />
+				</div>
+				<Button color="light" type="submit">送信</Button>
+			</form>
+		</Card>
+	</div>
+</div>
