@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Modal, Button } from 'flowbite-svelte';
+	import { Modal, Button, ButtonGroup, Input } from 'flowbite-svelte';
 	export let open = false;
 </script>
 
@@ -9,11 +9,13 @@
 
 <div>
 	<Modal bind:open size="lg" title="アーティスト・プレイリストを追加">
-		<div class="input-group">
-			<input type="text" class="form-control me-3" placeholder="キーワードを入力" />
-			<Button color="light" outline>
-				<i class="bi bi-search" /> 検索
-			</Button>
+		<div class="flex flex-col">
+			<ButtonGroup size="sm" class="w-full">
+				<Input type="search" placeholder="キーワードを入力" />
+				<Button color="light" outline>
+					<i class="bi bi-search me-2" /> Search
+				</Button>
+			</ButtonGroup>
 		</div>
 	</Modal>
 </div>

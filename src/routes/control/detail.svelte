@@ -34,7 +34,7 @@
 		<Img class="mx-auto my-3" alt="Playlist Image" src="" />
 		<div class="mx-auto">
 			<h1 class="my-6 text-center text-4xl font-bold">プレイリスト名</h1>
-			<ul class="list-disc text-left text-sm text-gray-500 underline">
+			<ul class="list-disc text-left text-sm text-gray-500">
 				<li>曲数, 公開／非公開</li>
 				<li>監視対象アーティスト数: 1</li>
 				<li>監視対象プレイリスト数: 1</li>
@@ -46,31 +46,29 @@
 		<Accordion>
 			<AccordionItem paddingDefault="p-3">
 				<span slot="header">履歴</span>
-				<div class="overflow-auto" style="height: 50vh;">
-					<Table>
-						<TableBody>
-							{#each new Array(100) as cat}
-								<TableBodyRow class="bg-green-300 bg-opacity-10">
-									<TableBodyCell>
-										<i class="bi bi-plus" />
-										<span> 追加</span>
-									</TableBodyCell>
-									<TableBodyCell>曲名1</TableBodyCell>
-									<TableBodyCell>アーティスト1</TableBodyCell>
-									<TableBodyCell>yyyy/MM/dd</TableBodyCell>
-								</TableBodyRow>
-								<TableBodyRow class="bg-red-300 bg-opacity-10">
-									<TableBodyCell>
-										<i class="bi bi-dash" />
-										<span> 削除</span>
-									</TableBodyCell>
-									<TableBodyCell>曲名2</TableBodyCell>
-									<TableBodyCell />
-									<TableBodyCell>yyyy/MM/dd</TableBodyCell>
-								</TableBodyRow>
-							{/each}
-						</TableBody>
-					</Table>
+				<div class="overflow-auto text-sm" style="height: 50vh;">
+					{#each new Array(100) as cat}
+						<div
+							class="grid grid-cols-12 items-center gap-1 border-b bg-green-100 py-2 text-green-700"
+						>
+							<span class="col-span-3 md:col-span-2">
+								<i class="bi bi-plus" />
+								<span> 追加</span>
+							</span>
+							<span class="col-span-9 md:col-span-5"> 曲名1 </span>
+							<span class="hidden md:block md:col-span-3"> アーティスト1 </span>
+							<span class="hidden md:block md:col-span-2"> yyyy/MM/dd </span>
+						</div>
+						<div class="grid grid-cols-12 items-center gap-1 border-b bg-red-100 py-2 text-red-700">
+							<span class="col-span-3 md:col-span-2">
+								<i class="bi bi-dash" />
+								<span> 削除</span>
+							</span>
+							<span class="col-span-9 md:col-span-5"> 曲名2 </span>
+							<span class="hidden md:block md:col-span-3" />
+							<span class="hidden md:block md:col-span-2"> yyyy/MM/dd </span>
+						</div>
+					{/each}
 				</div>
 			</AccordionItem>
 		</Accordion>
@@ -78,7 +76,7 @@
 
 	<div class="sticky top-0 z-10 my-3 flex flex-row items-center border-b bg-white">
 		<div>
-			<h2 class="text-2xl ms-3">設定</h2>
+			<h2 class="ms-3 text-2xl">設定</h2>
 		</div>
 		<div class="ms-auto">
 			<Button color="light" block class="my-2">変更を保存</Button>

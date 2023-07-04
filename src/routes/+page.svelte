@@ -7,7 +7,11 @@
 	<div class="relative justify-center">
 		<div class="text-center text-white">
 			<!-- Page heading-->
-			<h1 class="mb-7 text-4xl">Spotify新曲プレイリスト<br class="sm:hidden" />自動管理ツール</h1>
+			<h1 class="mb-2 text-xl font-bold sm:text-3xl">
+				<b class="text-orange-400">「Spotify New Release Follower」</b>で<br
+				/>好きなアーティストの新曲を聴きまくろう！
+			</h1>
+			<h4 class="mb-7 text-sm sm:text-base">Spotify のプレイリストを自動管理するWebサービスです。</h4>
 			<Button color="green" size="lg" href="/login">Spotify でログインしてはじめる</Button>
 			<p class="mt-3">
 				<small>
